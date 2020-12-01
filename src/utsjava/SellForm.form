@@ -306,10 +306,9 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="btnClearPrdk" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnClearJual" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnTambahJual" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnEditPrdk" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnHapusPrdk" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnHapusJual" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="81" max="32767" attributes="0"/>
               </Group>
@@ -328,12 +327,10 @@
                   <EmptySpace pref="28" max="32767" attributes="0"/>
                   <Component id="btnTambahJual" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnEditPrdk" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnHapusJual" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnHapusPrdk" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btnClearPrdk" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btnClearJual" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="labelTotal" min="-2" max="-2" attributes="0"/>
@@ -354,18 +351,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTambahJualActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnEditPrdk">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Edit"/>
-            <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
-              <Insets value="[5, 14, 2, 14]"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditPrdkActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnHapusPrdk">
+        <Component class="javax.swing.JButton" name="btnHapusJual">
           <Properties>
             <Property name="text" type="java.lang.String" value="Hapus"/>
             <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
@@ -373,15 +359,15 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHapusPrdkActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHapusJualActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnClearPrdk">
+        <Component class="javax.swing.JButton" name="btnClearJual">
           <Properties>
             <Property name="text" type="java.lang.String" value="Clear"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearPrdkActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearJualActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">

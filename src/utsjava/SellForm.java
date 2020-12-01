@@ -21,6 +21,7 @@ public class SellForm extends javax.swing.JFrame {
         initComponents();
         LoadTable();
         Kosong();
+        HitungTotal();
     }
 
     /**
@@ -50,9 +51,8 @@ public class SellForm extends javax.swing.JFrame {
         tableMatJ = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
         btnTambahJual = new javax.swing.JButton();
-        btnEditPrdk = new javax.swing.JButton();
-        btnHapusPrdk = new javax.swing.JButton();
-        btnClearPrdk = new javax.swing.JButton();
+        btnHapusJual = new javax.swing.JButton();
+        btnClearJual = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         labelTotal = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
@@ -221,26 +221,18 @@ public class SellForm extends javax.swing.JFrame {
             }
         });
 
-        btnEditPrdk.setText("Edit");
-        btnEditPrdk.setMargin(new java.awt.Insets(5, 14, 2, 14));
-        btnEditPrdk.addActionListener(new java.awt.event.ActionListener() {
+        btnHapusJual.setText("Hapus");
+        btnHapusJual.setMargin(new java.awt.Insets(5, 14, 2, 14));
+        btnHapusJual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditPrdkActionPerformed(evt);
+                btnHapusJualActionPerformed(evt);
             }
         });
 
-        btnHapusPrdk.setText("Hapus");
-        btnHapusPrdk.setMargin(new java.awt.Insets(5, 14, 2, 14));
-        btnHapusPrdk.addActionListener(new java.awt.event.ActionListener() {
+        btnClearJual.setText("Clear");
+        btnClearJual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHapusPrdkActionPerformed(evt);
-            }
-        });
-
-        btnClearPrdk.setText("Clear");
-        btnClearPrdk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnClearPrdkActionPerformed(evt);
+                btnClearJualActionPerformed(evt);
             }
         });
 
@@ -255,10 +247,9 @@ public class SellForm extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnClearPrdk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnClearJual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnTambahJual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEditPrdk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnHapusPrdk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnHapusJual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(81, Short.MAX_VALUE))
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,12 +263,10 @@ public class SellForm extends javax.swing.JFrame {
                 .addContainerGap(28, Short.MAX_VALUE)
                 .addComponent(btnTambahJual)
                 .addGap(18, 18, 18)
-                .addComponent(btnEditPrdk)
+                .addComponent(btnHapusJual)
                 .addGap(18, 18, 18)
-                .addComponent(btnHapusPrdk)
-                .addGap(18, 18, 18)
-                .addComponent(btnClearPrdk)
-                .addGap(18, 18, 18)
+                .addComponent(btnClearJual)
+                .addGap(61, 61, 61)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelTotal)
@@ -369,6 +358,7 @@ public class SellForm extends javax.swing.JFrame {
         txtNamaPrdkJ.setText(namaPrdk);                
         String harga = tableMatJ.getValueAt(baris, 4).toString();
         txtHargaJ.setText(harga);
+        txtJumlahPrdkJ.setText("1");
        
     }//GEN-LAST:event_tableMatJMouseClicked
 
@@ -387,17 +377,23 @@ public class SellForm extends javax.swing.JFrame {
         labelTotal.setText("Rp." + HitungTotal());
     }//GEN-LAST:event_btnTambahJualActionPerformed
 
-    private void btnEditPrdkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditPrdkActionPerformed
+    private void btnHapusJualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusJualActionPerformed
+        //Hapus data pad table nota
+        DefaultTableModel model = (DefaultTableModel) tableNota.getModel();
+        
+        try {
+            int row = tableNota.getSelectedRow();
+            model.removeRow(row);
+        } catch (Exception e) {            
+        }
+        
+        labelTotal.setText("Rp." + HitungTotal());
+    }//GEN-LAST:event_btnHapusJualActionPerformed
 
-    }//GEN-LAST:event_btnEditPrdkActionPerformed
-
-    private void btnHapusPrdkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusPrdkActionPerformed
-
-    }//GEN-LAST:event_btnHapusPrdkActionPerformed
-
-    private void btnClearPrdkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearPrdkActionPerformed
-        //Bersihkan form material
-    }//GEN-LAST:event_btnClearPrdkActionPerformed
+    private void btnClearJualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearJualActionPerformed
+        //Bersihkan form Penjualan
+        Kosong();
+    }//GEN-LAST:event_btnClearJualActionPerformed
 
     /**
      * @param args the command line arguments
@@ -477,9 +473,8 @@ public class SellForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnClearPrdk;
-    private javax.swing.JButton btnEditPrdk;
-    private javax.swing.JButton btnHapusPrdk;
+    private javax.swing.JButton btnClearJual;
+    private javax.swing.JButton btnHapusJual;
     private javax.swing.JButton btnTambahJual;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
